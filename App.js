@@ -1,20 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import Home from './Home'
+
+const Stack = createStackNavigator();
+
+
+const CypherStack = () => {
+  return(
+    <Stack.Navigator initialRouteName='Home'>
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={({navigation}) => ({
+          headerTintColor: 'white',
+          headerStyle: { backgroundColor: 'gold' },
+        })}
+      />
+    </Stack.Navigator>
+  )
+}
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <CypherStack/>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
