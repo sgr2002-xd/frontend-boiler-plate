@@ -3,12 +3,22 @@ import { StyleSheet, View, Text, FlatList,StatusBar, Image, Button,TouchableHigh
 import { NavigationContainer } from '@react-navigation/native'; 
 import Home from './Home';
 import Seeds from './Seeds';
+var HDKey = require('hdkey');
 const bip39 = require('bip39');
 const ethWallet = require('ethereumjs-wallet');
+const { hdkey } = require('ethereumjs-wallet')
 const mnemonic = bip39.generateMnemonic();
 export default function SeedPhase(seed){
 
+
     const [data,setData]=useState([])
+    const getKey=()=>{
+        var seed1 = data[0];
+        var seed2 = data[1];
+        var seed3 = data[3]
+        var hdkey1 = HDKey.fromMasterSeed(Buffer.from(seed1, 'hex'));
+        console.log(hdkey1.privateExtendedKey);
+    }
     const submitHandler = ()=>{
       
     
@@ -16,9 +26,12 @@ export default function SeedPhase(seed){
     var mnemonic_list=mnemonic.split(' ');
     setData([...mnemonic_list])
     console.log(data)
+    navigation.navigate('Address');
+
     // let addressData = ethWallet.fromPrivateKey(data[0]);
     // console.log(`Private key = , ${addressData.getPrivateKeyString()}`);
     // console.log(`Address = , ${addressData.getAddressString()}`);
+    
       
     }
     const [dummy,setDummy]=useState([
@@ -57,6 +70,14 @@ export default function SeedPhase(seed){
                 <Button 
                   title="See Your Mnmonics" 
                   onPress={()=>submitHandler()}
+                  />
+                  
+                  
+                </TouchableHighlight>
+                <TouchableHighlight style={styles.button}>
+                <Button 
+                  title="Generate Address" 
+                  onPress={()=>getKey()}
                   />
                   
                   
