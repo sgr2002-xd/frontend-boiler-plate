@@ -5,30 +5,37 @@ import Home from './Home';
 import Seeds from './Seeds';
 const bip39 = require('bip39');
 const ethWallet = require('ethereumjs-wallet');
+const mnemonic = bip39.generateMnemonic();
 export default function SeedPhase(seed){
 
-    const [data,setData]=useState([
-        {seed:'sgr',key:1},
-        {seed:'varun',key:2},
-        {seed:'skp',key:3},
-        {seed:'football',key:4},
-        {seed:'soccer',key:5},
-    ])
-    // const pressHandler = ()=>{
-      
-    //     const mnemonic = bip39.generateMnemonic();
-    //     console.log(mnemonic);
-
-      
-    // }
+    const [data,setData]=useState([])
     const submitHandler = ()=>{
       
-        let addressData = ethWallet.fromPrivateKey('Your private key');
-    console.log(`Private key = , ${addressData.getPrivateKeyString()}`);
-    console.log(`Address = , ${addressData.getAddressString()}`);
-
+    
+    console.log(mnemonic.split(' '));
+    var mnemonic_list=mnemonic.split(' ');
+    setData([...mnemonic_list])
+    console.log(data)
+    // let addressData = ethWallet.fromPrivateKey(data[0]);
+    // console.log(`Private key = , ${addressData.getPrivateKeyString()}`);
+    // console.log(`Address = , ${addressData.getAddressString()}`);
       
     }
+    const [dummy,setDummy]=useState([
+        {seed:'****',key:1},
+        {seed:'****',key:2},
+        {seed:'****',key:3},
+        {seed:'****',key:4},
+        {seed:'****',key:5},
+        {seed:'****',key:6},
+        {seed:'****',key:7},
+        {seed:'****',key:8},
+        {seed:'****',key:9},
+        {seed:'****',key:10},
+        {seed:'****',key:11},
+        {seed:'****',key:12},
+    ])
+    
     
     return (
         <View style={styles.container}>
@@ -48,7 +55,7 @@ export default function SeedPhase(seed){
                 
                 <TouchableHighlight style={styles.button}>
                 <Button 
-                  title="Generate Address" 
+                  title="See Your Mnmonics" 
                   onPress={()=>submitHandler()}
                   />
                   

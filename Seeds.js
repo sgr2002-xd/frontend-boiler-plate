@@ -4,10 +4,12 @@ import { StyleSheet, View, Text, StatusBar, Image, Button,TouchableHighlight,Tou
 
 export default function Seeds({item}){
 
+    console.log(item);
+
     return (
         
             <Text style={styles.item}>
-                {item.seed}
+                {item}
             </Text>
         
     )
