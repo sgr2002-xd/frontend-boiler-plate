@@ -28,7 +28,7 @@ run - npm run web
 
 # Address Generation:
 
-<img width="1309" alt="Screenshot 2023-01-25 at 6 42 50 PM" src="https://user-images.githubusercontent.com/81622870/214572837-5cb95b7d-0870-4c31-9535-ffd62878a713.png">
+<img width="1309" alt="Screenshot 2023-01-25 at 6 42 50 PM" src="https://user-images.githubusercontent.com/81622870/214576045-c3582984-9327-49d8-90ac-8c382795f294.png">
 <img width="1311" alt="Screenshot 2023-01-25 at 6 43 07 PM" src="https://user-images.githubusercontent.com/81622870/214572862-edc6e6f4-67a1-40aa-83f4-58af31e621db.png">
 
 # Address in Console:
