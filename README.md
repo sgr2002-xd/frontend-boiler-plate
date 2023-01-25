@@ -21,7 +21,7 @@ run - npm run web
 
 <img width="1307" alt="Screenshot 2023-01-25 at 6 42 11 PM" src="https://user-images.githubusercontent.com/81622870/214572713-ca64d545-afcd-4960-8927-f744b7d52b44.png">
 
-# Seed Phase Page:
+# Seed Phrase Page:
 
 <img width="1308" alt="Screenshot 2023-01-25 at 6 41 58 PM" src="https://user-images.githubusercontent.com/81622870/214572767-aee2e8e4-23d9-4502-92e0-b710fab0965d.png">
 <img width="1308" alt="Screenshot 2023-01-25 at 6 42 38 PM" src="https://user-images.githubusercontent.com/81622870/214572810-87ac69fa-83c4-47f3-840a-295e3e966771.png">
