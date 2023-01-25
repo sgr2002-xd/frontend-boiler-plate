@@ -1,51 +1,132 @@
 import React from 'react';
-import { StyleSheet, View, Text, StatusBar, Image } from 'react-native';
+import { StyleSheet, View, Text, StatusBar, Image, Button,TouchableHighlight } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native'; 
+import SeedPhase from './SeedPhase';
+
+
+
 
 export default function Home ({navigation}) {
+   // generates a 12-word seed phrase
+  //       console.log(mnemonic);
+  // 
+  
+  
+  
     return(
+      
         <View style={styles.container}>
-            <Image source={require('./assets/home-banner.png')} style={styles.bannerImage}></Image>
-            <View style={styles.content}>
-                <Text style={styles.mainText}>Open up Home.js to start working!</Text>
-                <Text style={styles.helpText}>All the libraries and assets required are available in the app directory.</Text>
-                <Text style={styles.hintText}>Hint: Make use of stack navigation in App.js to navigate between screens!</Text>
-            </View>
-            <StatusBar style="auto" />
+          <View style={styles.content}>
+          <Text style={styles.mainText}>Get the World's first non-custodial cypher card</Text>
+          <Text style={styles.subText}>Explore all of Web3 in one place</Text>
+                <View style={styles.item}>
+                <Image source={require('./assets/swap.png')} style={styles.image}/>
+                <Text style={styles.itemText}>Explore all of Web3 in one place</Text>
+                </View>
+                <View style={styles.item}>
+                <Image source={require('./assets/buy.png')} style={styles.image}/>
+                <Text style={styles.itemText}>Buy at an affordable price</Text>
+                </View>
+                <View style={styles.item}>
+                <Image source={require('./assets/chain.png')} style={styles.image}/>
+                <Text style={styles.itemText}>9 Chains Supported more coming soon</Text>
+                </View>
+                <View style={styles.item}>
+                <Image source={require('./assets/browser.png')} style={styles.image}/>
+                <Text style={styles.itemText}>Accepted all over the world</Text>
+                </View>
+                
+                <TouchableHighlight style={styles.button}>
+                <Button 
+                  title='Create New Wallet' color='White'
+                  onPress={() => navigation.navigate('SeedPhase')}   
+                  />
+                  
+                  
+                </TouchableHighlight>
+          
+          </View>
+          
         </View>
+        
+        // <View style={styles.container}>
+        //   <View style={styles.content}>
+        //   <Text style={styles.subText}>Your Seed Phrase makes it easy to back up and restore account</Text>
+        //   <TouchableHighlight style={styles.button}>
+        //         <Button 
+        //            title='Confirm' color='White'
+        //           onPress={()=>navigation.navigate('SeedPhase')}
+        //           />
+                  
+                  
+        //   </TouchableHighlight>
+        //   </View>
+          
+              
+        // </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
+      // flex: 1,
+      flexDirection: 'row',
+      // backgroundColor: '#fff',
+      //  alignItems: 'center',
       flex: 1,
-      flexDirection: 'column',
       backgroundColor: '#fff',
-      alignItems: 'center',
     },
-    bannerImage: {
-      width: '100%',
-      height: '20%',
-      resizeMode: 'contain'
-    },
+    
     content: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      alignSelf: 'center'
+      // justifyContent: 'center',
+      // alignItems: 'center',
+      // alignSelf: 'center',
+      padding:20,
     },
+    item:{
+      flex:1,
+      paddingTop:5,
+      marginTop:50,
+      flexDirection:'row',
+      alignItems:'center',
+      justifyContent:'space-between',
+      // flexWrap:'wrap',
+      alignSelf:'center'
+  },
+  image:{
+    width: 100,
+    height: 50,
+    resizeMode: 'contain',
+  },
+  itemText:{
+    // textAlign:'center',
+    fontWeight:'normal'
+  },
+  button:{
+    width:200,
+    backgroundColor:'#FFCC00',
+    borderRadius:10,
+    marginLeft:100,
+    marginTop:50,
+    
+    
+},
+    
     mainText: {
       fontSize: 20,
       fontWeight: 'bold',
-      textAlign: 'center'
-    },
-    helpText: {
-      fontSize: 16,
       textAlign: 'center',
-      marginTop: 10
+      marginTop:20
     },
-    hintText: {
-      fontSize: 16,
+    subText:{
+      fontSize:16,
       textAlign: 'center',
-      marginTop: 15
+      marginTop:20
+
+    },
+    buttonView:{
+      marginTop:100,
+      
     }
+    
   });

@@ -2,6 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Home from './Home'
+import SeedPhase from './SeedPhase';
 
 const Stack = createStackNavigator();
 
@@ -17,6 +18,14 @@ const CypherStack = () => {
           headerStyle: { backgroundColor: 'gold' },
         })}
       />
+      <Stack.Screen
+            name="SeedPhase"
+            component={SeedPhase}
+            options={({navigation}) => ({
+              headerTintColor: 'white',
+              headerStyle: { backgroundColor: 'gold' },
+            })}
+          />
     </Stack.Navigator>
   )
 }
